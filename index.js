@@ -23,7 +23,7 @@ const port = flags.get('port') || process.env.PORT || 3000;
 
 mongodb.setUpConnectionHandlers(() => {
     app.listen(port, () => {
-        conseol.log(`Server is running on port ${port}`);
+        console.log(`Server is running on port ${port}`);
     });
 });
 mongodb.connect()

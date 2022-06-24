@@ -14,11 +14,11 @@ function connect (name, pw, host, port, db) {
 
 function setUpConnectionHandlers (callback){
     db.once('connecting', () => {
-        console.log('Conncting to MongoDB')
+        console.log('Connecting to MongoDB')
     });
 
     db.once('connected', () => {
-        console.log('Conncted to MongoDB')
+        console.log('Connected to MongoDB')
     });
 
     db.once('open', () => {
