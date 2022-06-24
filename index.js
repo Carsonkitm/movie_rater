@@ -20,6 +20,9 @@ const mongo = require('./persist/mongo');
 // set up port number 
 const port = flags.get('port') || process.env.PORT || 3000;
 
+//handles
+
+app.post("/todo")
 
 mongodb.setUpConnectionHandlers(() => {
     app.listen(port, () => {
