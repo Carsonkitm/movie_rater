@@ -14,7 +14,7 @@ flags.parse();
 
 // put in env vars
 const dotenv = require('dotenv');
-const Todo = require('.persist/todo');
+const Todo = require('.persist/schema');
 
 // set up port number 
 const port = flags.get('port') || process.env.PORT || 3000;
