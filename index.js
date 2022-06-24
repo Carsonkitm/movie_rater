@@ -14,9 +14,14 @@ flags.parse();
 
 // put in env vars
 const dotenv = require('dotenv');
-const Todo = require('.persist/schema');
+//const Todo = require('.persist/schema');
 
 // set up port number 
 const port = flags.get('port') || process.env.PORT || 3000;
 
 
+mongodb.setUpConnectionHandlers(() => {
+    app.listen(port, () => {
+        conseol.log(`Server is running on port ${port}`);
+    })
+})

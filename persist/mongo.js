@@ -12,7 +12,7 @@ function connection (name, pw, host, port, db) {
 }
 
 
-function setUpDBHandlers (callback){
+function setUpConnectionHandlers (callback){
     db.once('connecting', () => {
         console.log('Conncting to MongoDB')
     });
@@ -32,5 +32,5 @@ function setUpDBHandlers (callback){
 
 module.exports = {
     connection: connection,
-    setUpDBHandlers: setUpDBHandlers
+    setUpConnectionHandlers: setUpConnectionHandlers
 }
