@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 // bring in mongo db
-const db = require('./persist/mongo');
+const mongodb = require('./persist/mongo');
 
 // bring in flags
 const flags = require('flags');
@@ -14,6 +14,7 @@ flags.parse();
 
 // put in env vars
 const dotenv = require('dotenv');
+const mongo = require('./persist/mongo');
 //const Todo = require('.persist/schema');
 
 // set up port number 
@@ -23,5 +24,6 @@ const port = flags.get('port') || process.env.PORT || 3000;
 mongodb.setUpConnectionHandlers(() => {
     app.listen(port, () => {
         conseol.log(`Server is running on port ${port}`);
-    })
-})
+    });
+});
+mongodb.connect()

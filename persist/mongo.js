@@ -2,10 +2,10 @@
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 
-function connection (name, pw, host, port, db) {
+function connect (name, pw, host, port, db) {
     const connectionString = ``;
 
-    mongoose.connection(connectionString, {
+    mongoose.connect(connectionString, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
@@ -31,6 +31,6 @@ function setUpConnectionHandlers (callback){
 }
 
 module.exports = {
-    connection: connection,
+    connect: connect,
     setUpConnectionHandlers: setUpConnectionHandlers
 }
