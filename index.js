@@ -9,4 +9,14 @@ const db = require('./persist/mongo');
 
 // bring in flags
 const flags = require('flags');
+flags.defineNumber("port", 3000, "Ports for the http server to listen to");
+flags.parse();
+
+// put in env vars
+const dotenv = require('dotenv');
+const Todo = require('.persist/todo');
+
+// set up port number 
+const port = flags.get('port') || process.env.PORT || 3000;
+
 
